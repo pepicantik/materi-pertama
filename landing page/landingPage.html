@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar HTML dan CSS | Landing Page Pembelajaran</title>
+  <meta name="description" content="Ringkasan materi dasar HTML dan CSS: semantic HTML, form, accessibility, SEO, selector, box model, Flexbox, Grid, responsive design, dan transition.">
+  <meta name="author" content="Nama Kamu">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Belajar HTML dan CSS">
+  <meta property="og:description" content="Ringkasan materi dasar HTML dan CSS dalam satu halaman.">
+  <meta property="og:type" content="website">
+
+<link rel="stylesheet" href="/landing page/landingPage.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#beranda" class="logo" aria-label="Beranda">Web<span>Dasar</span></a>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a class="nav-link" href="#html">HTML</a></li>
+          <li><a class="nav-link" href="#css">CSS</a></li>
+          <li><a class="nav-link" href="#layout">Layout</a></li>
+          <li><a class="nav-link" href="#form">Form</a></li>
+          <li><a class="nav-link" href="#responsive">Responsive</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="beranda">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-labelledby="judul-hero">
+      <div class="container">
+        <span class="badge">Catatan Belajar Front-End</span>
+        <h1 id="judul-hero">Dasar Web dengan <span class="grad">HTML &amp; CSS</span></h1>
+        <p>Ringkasan materi dari struktur dokumen, semantic HTML, form, hingga layout responsif, dikemas dalam satu halaman yang dibuat memakai HTML dan CSS saja.</p>
+        <div class="hero-actions">
+          <a href="#html" class="btn btn-primary">Mulai dari HTML</a>
+          <a href="#css" class="btn btn-outline">Lihat Materi CSS</a>
+        </div>
+
+        <div class="stats" aria-label="Ringkasan materi">
+          <div class="stat"><strong>6</strong><span>Materi HTML</span></div>
+          <div class="stat"><strong>7</strong><span>Materi CSS</span></div>
+          <div class="stat"><strong>13</strong><span>Total Topik</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HTML: PENGERTIAN ================= -->
+    <section id="html" class="soft" aria-labelledby="judul-html">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Bagian 1</span>
+          <h2 id="judul-html">HTML: Fondasi Halaman Web</h2>
+          <p>HyperText Markup Language adalah bahasa markup untuk menyusun struktur dan isi halaman web.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">📖</div>
+            <h3>Pengertian dan Fungsi</h3>
+            <p>HTML menandai jenis konten seperti judul, paragraf, gambar, tautan, dan form memakai tag. Browser mengubahnya menjadi DOM lalu menampilkannya di layar.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🧱</div>
+            <h3>Struktur Dasar Dokumen</h3>
+            <p>Setiap halaman diawali <code>&lt;!DOCTYPE html&gt;</code>, lalu elemen <code>html</code>, <code>head</code> untuk informasi halaman, dan <code>body</code> untuk konten yang terlihat.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🏷️</div>
+            <h3>Semantic HTML</h3>
+            <p>Pilih elemen berdasarkan fungsinya: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, dan <code>footer</code>.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">📝</div>
+            <h3>Form dan Validasi</h3>
+            <p>Atribut seperti <code>required</code>, <code>minlength</code>, <code>pattern</code>, dan <code>type</code> memvalidasi input langsung di browser.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">♿</div>
+            <h3>Accessibility</h3>
+            <p><code>label</code>, <code>alt</code>, dan atribut <code>aria-*</code> membuat halaman bisa dipakai screen reader dan navigasi keyboard.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🔍</div>
+            <h3>SEO Dasar</h3>
+            <p>Metadata di <code>head</code> seperti <code>title</code>, <code>description</code>, dan Open Graph membantu halaman dipahami mesin pencari.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STRUKTUR DOKUMEN ================= -->
+    <section aria-labelledby="judul-struktur">
+      <div class="container split">
+        <div>
+          <span class="eyebrow" style="color:var(--primary);font-weight:700;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;">Struktur Dokumen</span>
+          <h3 id="judul-struktur">Kerangka minimal yang wajib ada</h3>
+          <p>Kerangka ini memastikan browser membaca halaman dengan benar, menampilkan bahasa yang tepat, dan menyesuaikan layout di layar HP.</p>
+          <ul class="check-list">
+            <li><code>lang="id"</code> menandai bahasa halaman</li>
+            <li><code>charset="UTF-8"</code> agar karakter tampil benar</li>
+            <li><code>viewport</code> untuk tampilan mobile</li>
+            <li><code>title</code> muncul di tab dan hasil pencarian</li>
+          </ul>
+        </div>
+<pre class="code" aria-label="Contoh struktur dasar HTML"><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"id"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"viewport"</span>
+        <span class="attr">content</span>=<span class="val">"width=device-width,
+        initial-scale=1.0"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Halaman Pertamaku<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Halo, Dunia!<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- ================= SEMANTIC ================= -->
+    <section class="soft" aria-labelledby="judul-semantic">
+      <div class="container split">
+        <div class="semantic-demo" role="img" aria-label="Diagram tata letak elemen semantic HTML">
+          <div class="s-header">&lt;header&gt;</div>
+          <div class="s-nav">&lt;nav&gt;</div>
+          <div class="s-main">&lt;main&gt;
+            <small>&lt;section&gt; &amp; &lt;article&gt;</small>
+          </div>
+          <div class="s-footer">&lt;footer&gt;</div>
+        </div>
+        <div>
+          <span class="eyebrow" style="color:var(--primary);font-weight:700;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;">Semantic HTML</span>
+          <h3 id="judul-semantic">Elemen yang punya makna</h3>
+          <p>Semantic HTML membuat struktur mudah dibaca, dinavigasi screen reader, dan dipahami mesin pencari.</p>
+          <ul class="check-list">
+            <li><code>header</code> dan <code>nav</code> untuk kepala halaman dan navigasi</li>
+            <li><code>main</code> berisi konten utama (satu per halaman)</li>
+            <li><code>section</code> mengelompokkan konten sejenis</li>
+            <li><code>article</code> untuk konten yang berdiri sendiri</li>
+            <li><code>footer</code> untuk bagian penutup</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CSS ================= -->
+    <section id="css" aria-labelledby="judul-css">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Bagian 2</span>
+          <h2 id="judul-css">CSS: Mengatur Tampilan</h2>
+          <p>Cascading Style Sheets memisahkan tampilan dari struktur, sehingga kode lebih rapi dan mudah dirawat.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🎨</div>
+            <h3>Pengertian dan Fungsi</h3>
+            <p>CSS mengatur warna, font, jarak, tata letak, hingga animasi. Bisa ditulis inline, internal, atau eksternal (disarankan).</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🖌️</div>
+            <h3>Styling Dasar</h3>
+            <p>Properti seperti <code>color</code>, <code>font-family</code>, <code>background</code>, dan variabel <code>var(--nama)</code> menjaga tampilan konsisten.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🎯</div>
+            <h3>Selector dan Specificity</h3>
+            <p>Selector memilih elemen, specificity menentukan aturan mana yang menang ketika terjadi bentrok.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">📦</div>
+            <h3>Box Model</h3>
+            <p>Setiap elemen adalah kotak berlapis: content, padding, border, dan margin.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🧩</div>
+            <h3>Flexbox dan Grid</h3>
+            <p>Flexbox untuk layout satu arah, Grid untuk layout dua arah. Keduanya sering dipakai bersama.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">✨</div>
+            <h3>Transition dan Hover</h3>
+            <p>Perubahan tampilan yang halus saat kursor diarahkan ke elemen. Coba arahkan kursor ke kartu ini.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPECIFICITY ================= -->
+    <section class="soft" aria-labelledby="judul-spec">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Selector</span>
+          <h2 id="judul-spec">Specificity: siapa yang menang?</h2>
+          <p>Bobot dihitung dari inline, ID, class, lalu elemen. Bobot tertinggi menang, bila sama maka yang ditulis terakhir menang.</p>
+        </div>
+
+        <div class="table-scroll">
+          <table class="spec-table">
+            <caption class="sr-only" style="position:absolute;left:-9999px;">Tabel bobot specificity CSS</caption>
+            <thead>
+              <tr>
+                <th scope="col">Selector</th>
+                <th scope="col">Bobot</th>
+                <th scope="col">Keterangan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>p</code></td><td>0-0-0-1</td><td>Elemen, paling lemah</td></tr>
+              <tr><td><code>.teks</code></td><td>0-0-1-0</td><td>Class, lebih kuat dari elemen</td></tr>
+              <tr><td><code>p.teks</code></td><td>0-0-1-1</td><td>Class + elemen</td></tr>
+              <tr><td><code>#intro</code></td><td>0-1-0-0</td><td>ID, lebih kuat dari class</td></tr>
+              <tr><td><code>style="..."</code></td><td>1-0-0-0</td><td>Inline, paling kuat</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LAYOUT ================= -->
+    <section id="layout" aria-labelledby="judul-layout">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Layout</span>
+          <h2 id="judul-layout">Box Model, Flexbox, dan Grid</h2>
+          <p>Tiga konsep inti untuk mengatur ukuran, jarak, dan posisi elemen.</p>
+        </div>
+
+        <div class="demo-grid">
+          <div class="demo-box">
+            <h3>Box Model</h3>
+            <p>Dari luar ke dalam: margin, border, padding, content.</p>
+            <div class="boxmodel" role="img" aria-label="Diagram box model: margin, border, padding, content">
+              <div class="bm-margin">MARGIN
+                <div class="bm-border">BORDER
+                  <div class="bm-padding">PADDING
+                    <div class="bm-content">CONTENT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-box">
+            <h3>Flexbox</h3>
+            <p><code>justify-content: space-between</code> dan <code>align-items: center</code>.</p>
+            <div class="flex-demo">
+              <span>Item 1</span>
+              <span>Item 2</span>
+              <span>Item 3</span>
+            </div>
+
+            <h3 style="margin-top:1.5rem;">CSS Grid</h3>
+            <p><code>grid-template-columns: repeat(3, 1fr)</code> dengan <code>span</code>.</p>
+            <div class="grid-demo">
+              <span>1 (span 2)</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4 (span 2)</span>
+              <span>5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FORM ================= -->
+    <section id="form" class="soft" aria-labelledby="judul-form">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Form, Accessibility, dan SEO</span>
+          <h2 id="judul-form">Contoh Form dengan Validasi HTML</h2>
+          <p>Coba kirim form kosong atau isi dengan format salah. Browser akan memvalidasi tanpa JavaScript.</p>
+        </div>
+
+        <div class="form-wrap">
+          <form action="#" method="post">
+            <div class="form-row">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" required minlength="3" maxlength="50" placeholder="Contoh: Budi Santoso" autocomplete="name">
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="nama@contoh.com" aria-describedby="hint-email" autocomplete="email">
+              <p class="hint" id="hint-email">Gunakan email aktif.</p>
+            </div>
+
+            <div class="form-row">
+              <label for="hp">No. HP</label>
+              <input type="tel" id="hp" name="hp" pattern="08[0-9]{8,11}" title="Diawali 08, total 10-13 digit" placeholder="081234567890" aria-describedby="hint-hp">
+              <p class="hint" id="hint-hp">Diawali 08, 10-13 digit.</p>
+            </div>
+
+            <div class="form-row">
+              <label for="topik">Topik Favorit</label>
+              <select id="topik" name="topik" required>
+                <option value="">-- Pilih topik --</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="layout">Flexbox dan Grid</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" maxlength="300" placeholder="Tulis pesan..."></textarea>
+            </div>
+
+            <div class="form-row check-row">
+              <input type="checkbox" id="setuju" name="setuju" required>
+              <label for="setuju">Saya menyetujui syarat dan ketentuan</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Kirim</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESPONSIVE ================= -->
+    <section id="responsive" aria-labelledby="judul-responsive">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Responsive Design</span>
+          <h2 id="judul-responsive">Satu Halaman, Semua Layar</h2>
+          <p>Dengan pendekatan fleksibel dan media queries, tampilan menyesuaikan ukuran layar. Coba perkecil jendela browsermu.</p>
+        </div>
+
+        <div class="devices">
+          <article class="device">
+            <div class="emoji" aria-hidden="true">📱</div>
+            <h3>Mobile</h3>
+            <p>Satu kolom, navigasi bertumpuk</p>
+            <code>max-width: 640px</code>
+          </article>
+          <article class="device">
+            <div class="emoji" aria-hidden="true">📲</div>
+            <h3>Tablet</h3>
+            <p>Layout menyesuaikan, kolom berkurang</p>
+            <code>max-width: 900px</code>
+          </article>
+          <article class="device">
+            <div class="emoji" aria-hidden="true">💻</div>
+            <h3>Desktop</h3>
+            <p>Grid multi-kolom dan ruang lebih luas</p>
+            <code>&gt; 900px</code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section aria-labelledby="judul-cta" style="padding-top:0;">
+      <div class="container">
+        <div class="cta">
+          <h2 id="judul-cta">Siap lanjut ke JavaScript?</h2>
+          <p>Dengan dasar HTML dan CSS yang kuat, langkah berikutnya adalah menambahkan interaksi lewat JavaScript.</p>
+          <a href="#beranda" class="btn">Kembali ke atas</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 WebDasar. Dibuat dengan HTML dan CSS.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Belajar HTML dan CSS untuk Pemula | Blog Teknologi</title>
+  <meta name="description" content="Panduan belajar HTML dan CSS dari dasar lengkap dengan contoh kode dan latihan.">
+  <meta name="author" content="Budi Santoso">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://contoh.com/belajar-html-css">
+
+  <!-- Open Graph untuk media sosial -->
+  <meta property="og:title" content="Belajar HTML dan CSS untuk Pemula">
+  <meta property="og:description" content="Panduan lengkap HTML dan CSS dari dasar.">
+  <meta property="og:image" content="https://contoh.com/cover.jpg">
+  <meta property="og:type" content="article">
+
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <!-- 1. Alt pada gambar -->
+<img src="grafik-penjualan.png" alt="Grafik penjualan naik 20% pada kuartal ketiga">
+<img src="garis-hias.png" alt=""> <!-- gambar dekoratif: alt dikosongkan -->
+
+<!-- 2. Label pada input -->
+<label for="cari">Cari artikel</label>
+<input type="search" id="cari">
+
+<!-- 3. ARIA -->
+<button aria-label="Tutup menu" type="button">✕</button>
+
+<nav aria-label="Navigasi utama">...</nav>
+
+<button aria-expanded="false" aria-controls="menu" type="button">Menu</button>
+<ul id="menu" hidden>...</ul>
+
+<div role="alert">Data berhasil disimpan.</div>
+
+<input type="email" id="email" aria-describedby="hint-email" aria-required="true">
+<small id="hint-email">Gunakan email aktif.</small>
+
+<script src="script.js"></script>
+</body>
+</html>

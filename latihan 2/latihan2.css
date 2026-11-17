@@ -1,0 +1,241 @@
+h1 {
+  color: #2563eb;
+  font-size: 2rem;
+}
+:root {
+  --warna-utama: #2563eb;
+  --warna-teks: #1f2937;
+  --latar: #f9fafb;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--warna-teks);
+  background-color: var(--latar);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--warna-utama);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  color: var(--warna-utama);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.tombol {
+  display: inline-block;
+  background: var(--warna-utama);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+/* Selector dasar */
+p { color: black; }                 
+.teks { color: blue; }              
+#intro { color: red; }              
+* { margin: 0; }                     
+
+/* Gabungan dan relasi */
+h1, h2 { font-weight: 700; }         
+article p { line-height: 1.8; }      
+ul > li { list-style: square; }     
+h2 + p { margin-top: 0; }           
+p.sorot { background: yellow; }      
+
+/* Atribut */
+input[type="email"] { border: 1px solid green; }
+a[href^="https"] { color: green; }
+
+/* Pseudo-class dan pseudo-element */
+a:hover { text-decoration: underline; }
+li:first-child { font-weight: bold; }
+li:nth-child(even) { background: #eee; }
+input:focus { outline: 2px solid blue; }
+p::first-line { font-weight: bold; }
+p::before { content: "→ "; }
+
+* {
+  box-sizing: border-box;
+}
+
+.kartu {
+  width: 300px;
+  padding: 20px;                 
+  border: 2px solid #2563eb;
+  margin: 16px auto;              
+  background: white;
+}
+
+/* Variasi penulisan */
+.contoh {
+  margin: 10px 20px;              
+  padding: 5px 10px 15px 20px;   
+  border-top: 4px solid red;
+  border-radius: 12px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;            
+  padding: 1rem 2rem;
+  background: #2563eb;
+  color: white;
+}
+.navbar nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Kartu yang membungkus ke baris berikutnya */
+.daftar-kartu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.daftar-kartu .kartu {
+  flex: 1 1 250px;   
+}
+
+/* Menengahkan elemen di tengah layar */
+.pusat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.halaman {
+  display: grid;
+  grid-template-columns: 200px 1fr;           
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 1rem;
+  min-height: 100vh;
+}
+.halaman header { grid-area: header; }
+.halaman aside  { grid-area: sidebar; }
+.halaman main   { grid-area: main; }
+.halaman footer { grid-area: footer; }
+
+/* Galeri otomatis menyesuaikan jumlah kolom */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Mobile-first: dasar untuk layar kecil */
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr;       
+  gap: 1rem;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet ke atas */
+@media (min-width: 600px) {
+  .galeri {
+    grid-template-columns: repeat(2, 1fr);   
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .galeri {
+    grid-template-columns: repeat(3, 1fr);   
+  }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Contoh kondisi lain */
+@media (prefers-color-scheme: dark) {
+  body { background: #111; color: #eee; }
+}
+@media print {
+  nav { display: none; }
+}
+
+.tombol {
+  background: #2563eb;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tombol:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+}
+
+.tombol:active {
+  transform: translateY(0);
+}
+
+.tombol:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* Kartu dengan zoom gambar */
+.kartu {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.kartu img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+.kartu:hover img {
+  transform: scale(1.08);
+}
+
+/* Garis bawah animasi pada tautan */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
